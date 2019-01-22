@@ -14,6 +14,16 @@ DallasTemperature sensors(&oneWire);
 // arrays to hold device address
 DeviceAddress insideThermometer;
 
+// function to print a device address
+void printAddress(DeviceAddress deviceAddress)
+{
+    for (uint8_t i = 0; i < 8; i++)
+    {
+        if (deviceAddress[i] < 16) Serial.print("0");
+        Serial.print(deviceAddress[i], HEX);
+    }
+}
+
 /*
  * Setup function. Here we do the basics
  */
@@ -108,14 +118,4 @@ void loop(void)
 
     // It responds almost immediately. Let's print out the data
     printTemperature(insideThermometer); // Use a simple function to print out the data
-}
-
-// function to print a device address
-void printAddress(DeviceAddress deviceAddress)
-{
-    for (uint8_t i = 0; i < 8; i++)
-    {
-        if (deviceAddress[i] < 16) Serial.print("0");
-        Serial.print(deviceAddress[i], HEX);
-    }
 }
