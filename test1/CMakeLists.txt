@@ -8,6 +8,9 @@ project(${PROJECT_NAME} C CXX)
 
 get_board_id(board_id mini atmega328)
 
+#message(${ARDUINO_SDK_LIBRARIES_PATH})
+#message(${PROJECT_SOURCE_DIR})
+
 add_arduino_executable(${PROJECT_NAME} ${board_id} main.cpp)
 upload_arduino_target(${PROJECT_NAME} "${board_id}" COM6)
 
