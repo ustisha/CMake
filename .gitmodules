@@ -1,0 +1,9 @@
+[submodule "arduino-cmake-ng"]
+	path = arduino-cmake-ng
+	url = https://github.com/arduino-cmake/Arduino-CMake-NG
+[submodule "libraries/DallasTemperature"]
+	path = libraries/DallasTemperature
+	url = https://github.com/milesburton/Arduino-Temperature-Control-Library
+[submodule "libraries/OneWire"]
+	path = libraries/OneWire
+	url = https://github.com/PaulStoffregen/OneWire
