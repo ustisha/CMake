@@ -14,8 +14,9 @@ get_board_id(board_id mini atmega328)
 add_arduino_executable(${PROJECT_NAME} ${board_id} main.cpp)
 upload_arduino_target(${PROJECT_NAME} "${board_id}" COM6)
 
-find_arduino_library(OneWire_Lib OneWire ${board_id})
+find_arduino_library(OneWire_Lib OneWire ${board_id} 3RD_PARTY)
 link_arduino_library(${PROJECT_NAME} OneWire_Lib ${board_id})
 
-find_arduino_library(DallasTemperature_Lib DallasTemperature ${board_id})
+find_arduino_library(DallasTemperature_Lib DallasTemperature ${board_id} 3RD_PARTY)
 link_arduino_library(${PROJECT_NAME} DallasTemperature_Lib ${board_id})
+link_arduino_library(DallasTemperature_Lib OneWire_Lib ${board_id})
